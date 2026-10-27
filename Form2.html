@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a Free Account</title>
+  <style>
+    /* Reset and Core Layout */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: screen;
+      padding: 40px 20px;
+    }
+
+    /* Container Card */
+    .form-container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      width: 100%;
+      max-width: 650px;
+    }
+
+    h1 {
+      color: #2d3748;
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    /* Fieldset / Sections */
+    .form-section {
+      border: none;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 24px;
+    }
+
+    .form-section:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    legend {
+      color: #4a5568;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    /* Grid Layout for Fields */
+    .grid-fields {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 600px) {
+      .grid-fields {
+        grid-template-columns: 1fr 1fr;
+      }
+      .span-full {
+        grid-column: span 2;
+      }
+    }
+
+    /* Input Fields & Labels */
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    label {
+      color: #718096;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="url"],
+    select {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #cbd5e0;
+      border-radius: 8px;
+      font-size: 15px;
+      color: #2d3748;
+      background-color: #fff;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #3182ce;
+      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+    }
+
+    /* Birthdate Selectors Row */
+    .birthdate-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+
+    /* Radio and Checkbox Styling */
+    .radio-group {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding-top: 8px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .inline-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #4a5568;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .inline-label input[type="radio"],
+    .inline-label input[type="checkbox"] {
+      margin-top: 3px;
+      width: 16px;
+      height: 16px;
+      accent-color: #3182ce;
+    }
+
+    .inline-label a {
+      color: #3182ce;
+      text-decoration: none;
+    }
+
+    .inline-label a:hover {
+      text-decoration: underline;
+    }
+
+    /* Submit Button */
+    button[type="submit"] {
+      background-color: #3182ce;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2b6cb0;
+    }
+
+    button[type="submit"]:active {
+      transform: scale(0.99);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Create a Free Account</h1>
+    
+    <form action="#" method="POST">
+      
+      <!-- Account Details Section -->
+      <fieldset class="form-section">
+        <legend>Account Details</legend>
+        <div class="grid-fields">
+          <div class="field-group">
+            <label>Email*</label>
+            <input type="email" name="email" required>
+          </div>
+          <div class="field-group">
+            <label>Repeat email*</label>
+            <input type="email" name="remail" required>
+          </div>
+          <div class="field-group">
+            <label>Password*</label>
+            <input type="password" name="password" required>
+          </div>
+          <div class="field-group">
+            <label>Repeat password*</label>
+            <input type="password" name="rpassword" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Personal Details Section -->
+      <fieldset class="form-section">
+        <legend>Personal Details</legend>
+        <div class="grid-fields">
+          <div class="field-group span-full">
+            <label>Name*</label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="field-group">
+            <label>Phone*</label>
+            <input type="tel" name="phone" required>
+          </div>
+          <div class="field-group">
+            <label>Street</label>
+            <input type="text" name="street">
+          </div>
+          <div class="field-group">
+            <label>City*</label>
+            <input type="text" name="city" required>
+          </div>
+          <div class="field-group">
+            <label>Country*</label>
+            <input type="text" name="country" required>
+          </div>
+          <div class="field-group span-full">
+            <label>Website</label>
+            <input type="url" name="website" placeholder="https://">
+          </div>
+          <div class="field-group">
+            <label>Gender*</label>
+            <div class="radio-group">
+              <label class="inline-label">
+                <input type="radio" name="gender" value="male" required> Male
+              </label>
+              <label class="inline-label">
+                <input type="radio" name="gender" value="female" required> Female
+              </label>
+            </div>
+          </div>
+          <div class="field-group">
+            <label>Nationality*</label>
+            <input type="text" name="nationality" required>
+          </div>
+          <div class="field-group span-full">
+            <label>Birthdate*</label>
+            <div class="birthdate-row">
+              <select id="dob-day" required>
+                <option value="">Day</option>
+              </select>
+              <select id="dob-month" required>
+                <option value="">Month</option>
+              </select>
+              <select id="dob-year" required>
+                <option value="">Year</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-group span-full">
+            <label class="inline-label">
+              <input type="checkbox" name="children"> Children
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- Terms and Mailing Section -->
+      <fieldset class="form-section checkbox-group">
+        <legend>Terms and Mailing</legend>
+        <label class="inline-label">
+          <input type="checkbox" name="terms" required>
+          <span>I accept the <a href="#">Privacy Policy for W3Docs</a>*</span>
+        </label>
+        <label class="inline-label">
+          <input type="checkbox" name="offers">
+          <span>I want to receive personalized offers by your site</span>
+        </label>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    const daySelect = document.getElementById('dob-day');
+    const monthSelect = document.getElementById('dob-month');
+    const yearSelect = document.getElementById('dob-year');
+
+    for (let i = 1; i <= 31; i++) {
+      daySelect.add(new Option(i, i));
+    }
+
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    months.forEach((month, index) => {
+      monthSelect.add(new Option(month, index + 1));
+    });
+
+    const currentYear = new Date().getFullYear();
+    for (let i = currentYear; i >= 1900; i--) {
+      yearSelect.add(new Option(i, i));
+    }
+  </script>
+</body>
+</html>
+
